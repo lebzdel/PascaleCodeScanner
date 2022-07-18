@@ -1,0 +1,52 @@
+<bool> ::= false | true
+
+<int> ::= -<unsigned_int> | <unsigned_int>
+
+<record> ::= <var_list> end;
+
+<unsigned_int> ::= <digit> | <digit><unsigned_int>
+
+<while> ::= while (<bool_expression>) do <statement_part> begin | while (<bool_expression>) <statement>
+
+<bool_expr> ::= (<bool_expr> and <bool_expr>) | (<bool_expr> or <bool_expr>) | not <bool-exp> | <simple_bool_expr>
+
+<simple_bool_expr> ::= <identifier> <comparison_operator> <identifier> | <bool>
+
+<prog> ::= program <program_name>; type <type_part> var <var_list> begin <statement_part> end. | program <program_name>; var <var_list> begin <statement_part> end. | program <program_name>; var <var_list> begin <statement_part> end. | program <program_name>; begin <statement_part> end.
+
+<program_name> ::= <identifier>
+
+<identifier> ::= <letter> | <letter><chars>
+
+<chars> ::= <char>|<char><chars>
+
+<char> ::= <letter>|<digit>
+
+<letter> ::= A | B | C | D | E | F | G | H | I | J | K | L | M | N | O | P | Q | R | S | T | U | V | W | X | Y | Z | a | b | c | d | e | f | g | h | i | j | k | l | m | n | o | p | q | r | s | t | u | v | w | x | y | z | _
+
+<digit> ::= 0 | 1 | 2 | 3 | 4 | 5 | 6 | 7 | 8 | 9
+
+<type_list> ::= <one_type>; | <one_type>; <type_list>
+
+<one_type> ::= <type_name> = <i_b_typetype>;
+
+<type_name> ::= <identifier> | <identifier>, <identifier_list>
+
+<var_list> ::= <var>; | <var>; <var_list>
+
+<var> ::= <identifier_list> : <i_b_type>
+
+<i_b_type> ::= Integer | Boolean
+
+<identifier_list> ::= <identifier> | <identifier>, <identifier_list>
+
+<statement_part> ::= <statement>; | <statement>; <statement_part>
+
+<statement> ::= <assignment> | <write> | <read> | <while> | <if> | begin <statement_list> end | begin end
+
+<assignment> ::= <identifier> := <expression>
+
+<expression> ::= <identifier> | <expression><operation><expression> | (<expression>) | <int>
+
+<operation> ::= + | - | * | /
+
